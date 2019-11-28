@@ -4,7 +4,7 @@
 
 ### Installation
 
-Global installation for BackstopJS. 
+Global installation for BackstopJS.
 
 *TIP: This is a one-time requirement, do not need to do per project.*
 
@@ -14,7 +14,7 @@ $ npm install -g backstopjs
 
 
 
-###Start a QA for a project
+### Start a QA for a project
 
 Fork or clone https://github.com/ckng/backstopjs-template as a new repo to start a new project QA. This has a preconfigured
 
@@ -106,9 +106,9 @@ A full scenario example
 
 
 
-###Running for the first time
+### Running for the first time
 
-####Generate reference baseline
+#### Generate reference baseline
 
  ```bash
 $ backstop test
@@ -122,7 +122,7 @@ Pass a `--config=` argument to test using a different config file.
 
 
 
-####Approving baseline
+#### Approving baseline
 
 ```bash
 $ backstop approve
@@ -134,7 +134,7 @@ Commit the baseline images into the repo.
 
 
 
-###Testing multiple environment
+### Testing multiple environment
 
 Duplicate the primary backstop.js to the respective environment. Update the domain of the URLs in the config file.
 
