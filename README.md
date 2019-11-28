@@ -111,7 +111,7 @@ A full scenario example
 #### Generate reference baseline
 
  ```bash
-$ backstop test
+$ backstop reference
  ```
 
 This will create a new set of bitmaps in `bitmaps_test//`
@@ -120,19 +120,7 @@ Once the test bitmaps are generated, a report comparing the most recent test bit
 
 Pass a `--config=` argument to test using a different config file.
 
-
-
-#### Approving baseline
-
-```bash
-$ backstop approve
-```
-
-When running this command, all images (with changes) from your most recent test batch will be promoted to your reference collection. Subsequent tests will be compared against your updated reference files.
-
-Commit the baseline images into the repo.
-
-
+*TODO git tracking reference images using git lfs*
 
 ### Testing multiple environment
 
@@ -143,4 +131,16 @@ To test Dev, for example
 ```bash
 $ backstop test --config=backstop.dev.json
 ```
+
+
+
+#### Approving new changes
+
+```bash
+$ backstop approve
+```
+
+When running this command, all images (with changes) from your most recent test batch will be promoted to your reference collection. Subsequent tests will be compared against your updated reference files.
+
+Commit the baseline images into the repo.
 
