@@ -122,9 +122,65 @@ Once the test bitmaps are generated, a report comparing the most recent test bit
 
 Pass a `--config=` argument to test using a different config file.
 
-*TODO git tracking reference images using git lfs*
 
-### Testing multiple environment
+
+#### Using [Git Large File Storage](https://git-lfs.github.com/) (LFS)
+
+The reference images generated will be huge for git repo. We will use Git LFS to store these files to avoid it hogging and slow down the normal code git repo.
+
+**Install Git LFS**
+
+Install it from https://git-lfs.github.com/. Mac user can install using Homebrew
+
+```bash
+$ brew install git-lfs
+```
+
+
+
+**Initialize LFS**
+
+```bash
+$ git lfs install
+$ git lfs track "backstop_data/bitmaps_reference/*"
+$ git add .gitattributes
+$ git commit -m "save backstop references with LFS"
+$ git push
+```
+
+
+
+**Adding reference images to git**
+
+Adding the images is the same like adding any other files, but notice it will upload to LFS.
+
+```bash
+$ git add backstop_data/bitmaps_reference/
+$ git commit -m "added backstop references images"
+$ git push
+Uploading LFS objects: 100% (112/112), 231 MB | 4.0 MB/s, done
+...
+```
+
+
+
+### Testing
+
+Once a baseline is available, visual regression tests can be run.
+
+```bash
+$ backstop test
+```
+
+To test only certain scenario, use the `--filter` to limit to certain label.
+
+```bash
+$ backstop test --filter="Homepage"
+```
+
+
+
+**Multiple environments**
 
 Duplicate the primary backstop.js to the respective environment. Update the domain of the URLs in the config file.
 
@@ -145,6 +201,14 @@ $ backstop approve
 When running this command, all images (with changes) from your most recent test batch will be promoted to your reference collection. Subsequent tests will be compared against your updated reference files.
 
 Commit the baseline images into the repo.
+
+To approve single scenario, use the filename in the report.
+
+```bash
+$ backstop approve --filter="backstop_default_Homepage_0_document_0_phone"
+```
+
+
 
 ### onReady.js script
 
