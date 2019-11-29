@@ -10,6 +10,7 @@ module.exports = async (page, scenario, vp) => {
   // try {
   //   let element = await page.waitForSelector('.iubenda-cs-accept-btn', { 'timeout': 2000, 'visible': true });
   //   await element.click();
+  //   console.log('iubenda closed.')
   // }
   // catch {
   //   console.log('iubenda does not exists.')
@@ -19,6 +20,7 @@ module.exports = async (page, scenario, vp) => {
   // try {
   //   let element = await page.waitForSelector('.iubenda-cs-close-btn', { 'timeout': 2000, 'visible': true });
   //   await element.click();
+  //   console.log('iubenda closed.')
   // }
   // catch {
   //   console.log('iubenda does not exists.')
@@ -28,6 +30,7 @@ module.exports = async (page, scenario, vp) => {
   // try {
   //   let element = await page.waitForSelector('.initial-message-close-button', { 'timeout': 2000, 'visible': true });
   //   await element.click();
+  //   console.log('Hubspot chat closed.')
   // }
   // catch {
   //   console.log('Hubspot chat does not exists.')
