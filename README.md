@@ -144,3 +144,16 @@ When running this command, all images (with changes) from your most recent test 
 
 Commit the baseline images into the repo.
 
+### onReady.js script
+
+The following can be enabled via backstop_data/engine_scripts/puppet/onReady.js.
+
+#### iubenda cookie consent dialog
+
+Uncomment the "iubdenda - Accept button type." or "iubdenda - Close button type." section.
+
+#### Hubspot chat
+
+Uncomment the "Remove Hubspot chat prompt." section.
+
+
