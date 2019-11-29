@@ -20,6 +20,8 @@ Fork or clone https://github.com/ckng/backstopjs-template as a new repo to start
 
 - viewports.
 - dismiss iubenda cookie dialog.
+- dismiss Hubspot chat.
+- disable all CSS animations.
 - example scenarios.
 - convention for separate environments for Dev, Test, Live, and Pantheon Multidev.
 

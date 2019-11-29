@@ -2,6 +2,9 @@ module.exports = async (page, scenario, vp) => {
   console.log('SCENARIO > ' + scenario.label);
   await require('./clickAndHoverHelper')(page, scenario);
 
+  // Disable all CSS animations.
+  page.addStyleTag({content: '*, *::after, *::before { transition: none !important; animation: none !important; transform: none !important; }}'})
+
   // Remove iubenda cookie consent dialog.
   // iubdenda - Accept button type.
   // try {
